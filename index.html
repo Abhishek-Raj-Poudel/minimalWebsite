@@ -4,16 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="main.js"></script>
+
+  <script type="module" src="main.js" defer></script>
+  <!--<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>-->
+
   <title>Document</title>
 </head>
 
-<body>
+<body class="bg-background text-text font-secondary">
   <main>
-    <section class="grid gap-5 mx-auto max-w-screen-2xl p-5 md:p-10 lg:p-20">
-      <h1 class="text-7xl text-center">Want <span class="text-red-400">beautiful</span> websites?</h1>
-      <p class="text-xl text-center">I am a professional Web developer with 5+ years of experience in tools like</p>
+    <section class="grid gap-10 items-start mx-auto max-w-screen-2xl p-5 md:p-10 md:py-32 lg:p-32">
+      <div class="space-y-5">
+        <h1 class="text-7xl text-center font-primary">Want <span class="text-primary">beautiful</span> websites?</h1>
+        <p class="text-xl text-center">I am a professional Web developer with 5+ years of experience in tools like</p>
+
+        <ul class="flex justify-center gap-2 flex-wrap" x-data="{tools:['React','Laravel','Wordpress']}">
+          <template x-for="tool in tools">
+            <li class="px-4 py-1 border-2 border-subtle rounded-full" x-text="tool"></li>
+          </template>
+
+        </ul>
+      </div>
+      <div class="flex justify-center gap-5">
+        <a href="#" class="btn btn-primary">Download Resume</a>
+        <a href="#" class="btn btn-secondary">Let's talk</a>
+      </div>
     </section>
   </main>
 </body>

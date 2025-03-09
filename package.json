@@ -1,9 +1,12 @@
 {
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./input.css -o ./style.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./input.css -o ./style.css --watch",
+    "build": "npx vite build"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
+    "@tailwindcss/vite": "^4.0.12",
+    "alpinejs": "^3.14.8",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 /*! tailwindcss v4.0.12 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -6,13 +7,14 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(0.704 0.191 22.216);
     --spacing: 0.25rem;
     --breakpoint-2xl: 96rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -25,6 +27,12 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --color-primary: #F75353;
+    --color-text: #D1CFC0;
+    --color-subtle: #999999;
+    --color-background: #1F1F1F;
+    --font-primary: Antic;
+    --font-secondary: Raleway;
   }
 }
 @layer base {
@@ -169,6 +177,12 @@
   }
 }
 @layer utilities {
+  .collapse {
+    visibility: collapse;
+  }
+  .visible {
+    visibility: visible;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -190,8 +204,17 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .flex {
+    display: flex;
+  }
   .grid {
     display: grid;
+  }
+  .inline {
+    display: inline;
+  }
+  .table {
+    display: table;
   }
   .max-w-screen-2xl {
     max-width: var(--breakpoint-2xl);
@@ -202,14 +225,64 @@
   .flex-grow {
     flex-grow: 1;
   }
+  .transform {
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .space-y-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-subtle {
+    border-color: var(--color-subtle);
+  }
+  .bg-background {
+    background-color: var(--color-background);
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
   .text-center {
     text-align: center;
+  }
+  .font-primary {
+    font-family: var(--font-primary);
+  }
+  .font-secondary {
+    font-family: var(--font-secondary);
   }
   .text-7xl {
     font-size: var(--text-7xl);
@@ -219,17 +292,102 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
-  .text-red-400 {
-    color: var(--color-red-400);
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-text {
+    color: var(--color-text);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .md\:p-10 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 10);
     }
   }
-  .lg\:p-20 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 20);
+  .md\:py-32 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 32);
     }
   }
+  .lg\:p-32 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 32);
+    }
+  }
+}
+.btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 16px 24px;
+  background: var(--white);
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+  &:hover {
+    transform: translate(0px, 4px);
+    transition-duration: 150ms;
+  }
+  &:active {
+    transform: translate(0px, 8px);
+  }
+  &.btn-primary {
+    box-shadow: 0px 8px 0px 0 var(--color-primary);
+    border: 2px solid var(--color-primary);
+    &:hover {
+      box-shadow: -0px 4px 0px 0 var(--color-primary);
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+  &.btn-secondary {
+    box-shadow: -0px 8px 0px 0 var(--color-subtle);
+    border: 2px solid var(--color-subtle);
+    &:hover {
+      box-shadow: -0px 4px 0px 0 var(--color-subtle);
+    }
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateX(0);
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateY(0);
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateZ(0);
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewX(0);
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewY(0);
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }

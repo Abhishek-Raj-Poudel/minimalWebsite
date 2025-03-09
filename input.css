@@ -1,1 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
+
+@theme{
+  --color-primary:#F75353;
+  --color-text:#D1CFC0;
+  --color-subtle:#999999;
+  --color-background:#1F1F1F;
+  --font-primary: Antic;
+  --font-secondary: Raleway;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 16px 24px;
+  background: var(--white);
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+
+  &:hover {
+    transform: translate(0px, 4px);
+    transition-duration: 150ms;
+  }
+
+  &:active {
+    transform: translate(0px, 8px);
+  }
+
+  &.btn-primary {
+    box-shadow: 0px 8px 0px 0 var(--color-primary) ;
+    border: 2px solid var(--color-primary);
+
+    &:hover {
+      box-shadow: -0px 4px 0px 0 var(--color-primary);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &.btn-secondary {
+    box-shadow: -0px 8px 0px 0 var(--color-subtle);
+    border: 2px solid var(--color-subtle);
+
+    &:hover {
+      box-shadow: -0px 4px 0px 0 var(--color-subtle);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+}
