@@ -13,11 +13,9 @@
 .btn {
   text-transform: uppercase;
   font-size: 14px;
-  padding: 16px 24px;
   background: var(--white);
   width: fit-content;
   cursor: pointer;
-  border-radius: 8px;
   user-select: none;
 
   &:hover {
