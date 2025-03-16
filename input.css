@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Antic&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap');
 @import 'tailwindcss';
 
 @theme{
@@ -6,8 +6,14 @@
   --color-text:#D1CFC0;
   --color-subtle:#999999;
   --color-background:#1F1F1F;
-  --font-primary: Antic;
-  --font-secondary: Raleway;
+  --color-border:#4b4b4b;
+  --font-primary: "Pixelify Sans";
+  --font-secondary: Outfit;
+  
+}
+
+h1,h2,h3,h4,h5,h6,a{
+  font-family: var(--font-primary);
 }
 
 .btn {

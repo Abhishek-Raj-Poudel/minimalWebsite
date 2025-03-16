@@ -8,48 +8,104 @@
   <link rel="stylesheet" href="style.css">
 
   <script type="module" src="main.js" defer></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <!--<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>-->
 
   <title>Document</title>
 </head>
 
-<body class="bg-background text-text font-secondary container mx-auto">
-  <header class="flex items-center justify-between md:px-10 lg:px-32 py-5">
-    <h1 class="font-secondary"><strong>Abhishek Raj Poudel</strong></h1>
-    <div class=" flex justify-start items-start gap-2 rounded-full px-2">
-      <a href="#" class="btn btn-secondary p-2 px-4 rounded-md">
-        <img src="assets/icons/linkedin-icon.svg" alt="linkedin" height="20" width="20" loading="lazy">
-      </a>
-      <a href="#" class="btn btn-secondary p-2 px-4 rounded-md">
-        <img src="assets/icons/github-icon.svg" alt="linkedin" height="20" width="20" loading="lazy">
-      </a>
-      <a href="#" class="btn btn-secondary p-2 px-4 rounded-md">
-        <img src="assets/icons/instagram.svg" alt="linkedin" height="20" width="20" loading="lazy">
-      </a>
+<body class="bg-background text-text font-secondary">
+  <header class="flex justify-between items-center self-stretch relative px-32 py-5">
+    <a href="/" class="text-2xl font-semibold text-left font-primary ">
+      Abhishek Raj Poudel
+    </a>
+    <nav class="flex justify-center items-center relative gap-10 p-2.5">
+      <a href="#" class="text-xl text-left">About Me</a>
+      <a href="#" class="text-xl text-left">Contacts</a>
+    </nav>
+    <div class="flex gap-5">
+      <a href="#"><img src="/assets/icons/Linkedin.svg" height="28" width="20" loading="eager" alt=""></a>
+      <a href="#"><img src="/assets/icons/instagram.svg" height="28" width="20" loading="eager" alt=""></a>
+      <a href="#"><img src="/assets/icons/github.svg" height="28" width="20" loading="eager" alt=""></a>
     </div>
-
   </header>
-  <main>
-    <section class="grid gap-10 items-start container mx-auto p-5 md:p-10 md:py-32 lg:p-32">
-      <div class="space-y-5">
-        <h1 class="md:text-6xl text-7xl text-center font-primary">Want <span class="text-primary">beautiful</span>
-          websites?</h1>
-        <p class="md:text-lg text-xl text-center">I am a professional Web developer with 5+ years of experience in tools
-          like</p>
 
-        <ul class="flex justify-center gap-2 flex-wrap">
-          <template>
-            <li class="px-4 py-1 border-2 border-subtle rounded-full">React</li>
-            <li class="px-4 py-1 border-2 border-subtle rounded-full">Laravel</li>
-            <li class="px-4 py-1 border-2 border-subtle rounded-full">Wordpress</li>
-          </template>
-        </ul>
+  <main>
+    <section
+      class="flex justify-start items-start self-stretch gap-10 px-32 pt-32 bg-[#222] border-t-0 border-r-0 border-b-4 border-l-0 border-[#444]">
+      <div class="flex flex-col justify-center items-start flex-grow gap-10">
+        <h1 class="self-stretch  text-8xl font-semibold text-left">
+          <span>Want</span>
+          <span class="text-primary">beautiful</span>
+          <span>websites?</span>
+        </h1>
+        <div class="flex flex-col gap-5">
+          <p class="text-2xl">
+            I am a professional Web developer
+            <span class="text-primary">5+ years</span>
+            of experience in tools like
+          </p>
+          <ul class="flex gap-2 font-primary">
+            <li class="flex p-3 border-2 border-border gap-2">
+              <img src="/assets/icons/react.svg" class="object-contain" width="20" height="20" loading="eager" />
+              <p class="text-xl font-medium text-left">React</p>
+            </li>
+            <li class="flex p-3 border-2 border-border gap-2">
+              <img src="/assets/icons/wordpress.svg" class="object-contain" width="20" height="20" loading="eager" />
+              <p class="text-xl font-medium text-left">Wordpress</p>
+            </li>
+            <li class="flex p-3 border-2 border-border gap-2">
+              <img src="/assets/icons/laravel.svg" class="object-contain" width="20" height="20" loading="eager" />
+              <p class="text-xl font-medium text-left">Laravel</p>
+            </li>
+          </ul>
+        </div>
+        <div class="flex gap-2">
+          <button
+            class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
+            style="box-shadow: 0px 6px 0px 0 #aaa;">
+            <img src="assets/icons/download.svg" width="16" height="16">
+            <p>Download Resume</p>
+          </button>
+          <button
+            class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#1f1f1f] border-2 border-[#5f5f5f]"
+            style="box-shadow: 0px 6px 0px 0 #4b4b4b;">
+            <p class="flex-grow-0 flex-shrink-0 text-sm font-medium text-left uppercase text-[#d1cfc0]">
+              Let’s Talk
+            </p>
+          </button>
+        </div>
       </div>
-      <div class="flex justify-center gap-5">
-        <a href="#" class="btn btn-primary font-bold text-subtle px-6 py-4 rounded-lg">Download Resume</a>
-        <a href="#" class="btn btn-secondary font-bold text-subtle px-6 py-4 rounded-lg">Let's talk</a>
+
+      <!--right-->
+      <div
+        class="max-w-[600px] w-full flex justify-center items-center flex-col gap-5  p-10 py-16 bg-background -mb-1 border-x-4 border-t-4 border-[#444] ">
+        <img src="/assets/icons/me.svg" loading="eager">
+        <a href="/" class="text-4xl font-semibold text-left font-primary ">
+          Abhishek Raj Poudel
+        </a>
+        <p class="text-2xl">Full Stack Developer</p>
+        <div class="flex gap-8">
+          <a href="#"><img src="/assets/icons/Linkedin.svg" height="36" width="36" loading="eager" alt=""></a>
+          <a href="#"><img src="/assets/icons/instagram.svg" height="36" width="36" loading="eager" alt=""></a>
+          <a href="#"><img src="/assets/icons/github.svg" height="36" width="20" loading="eager" alt=""></a>
+        </div>
+        <button
+          class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
+          style="box-shadow: 0px 6px 0px 0 #aaa;">
+          <img src="assets/icons/download.svg" width="16" height="16">
+          <p>Download Resume</p>
+        </button>
       </div>
+
     </section>
+
+    <section class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 py-20">
+      <h2 class="flex-grow-0 flex-shrink-0 text-5xl font-semibold text-left text-white">
+        What I have been up to
+      </h2>
+    </section>
+
+
   </main>
 </body>
 
