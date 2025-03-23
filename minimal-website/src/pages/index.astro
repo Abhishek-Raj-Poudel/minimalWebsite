@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/home/Hero.astro'
+import ProjectCard from "../components/home/ProjectCard.svelte"
+import "../styles/global.css";
+
+const projectCards = [
+  {
+    title:"Ribera Solutions",
+    content:"A feature rich website filled with scroll-based animation powered by GSAP. Beautiful UI’s created with Tailwind css and the oveall web design done in Figma for consistant and responsive website.",
+    badges:[{
+    name:"wordpress",
+    icon:"wordpress"
+},
+{
+    name:"tailwind",
+    icon:"tailwind"
+},
+{
+    name:"figma",
+    icon:"figma"
+},
+{
+    name:"gsap animaiton",
+    icon:"gsap"
+},],
+    altBg:false,
+  },
+
+  {
+    title:"Ribera Solutions",
+    content:"A feature rich website filled with scroll-based animation powered by GSAP. Beautiful UI’s created with Tailwind css and the oveall web design done in Figma for consistant and responsive website.",
+    badges:[{
+    name:"wordpress",
+    icon:"wordpress"
+},
+{
+    name:"tailwind",
+    icon:"tailwind"
+},
+{
+    name:"figma",
+    icon:"figma"
+},
+{
+    name:"gsap animaiton",
+    icon:"gsap"
+},],
+  altBg:true
+  },
+
+  {
+    title:"Ribera Solutions",
+    content:"A feature rich website filled with scroll-based animation powered by GSAP. Beautiful UI’s created with Tailwind css and the oveall web design done in Figma for consistant and responsive website.",
+    badges:[{
+    name:"wordpress",
+    icon:"wordpress"
+},
+{
+    name:"tailwind",
+    icon:"tailwind"
+},
+{
+    name:"figma",
+    icon:"figma"
+},
+{
+    name:"gsap animaiton",
+    icon:"gsap"
+},],
+  altBg:false
+  },
+]
+---
+
+<Layout>
+  <Hero/>
+<section class="flex justify-center items-center relative gap-2.5 py-20">
+      <h2 class="text-5xl">
+        What I have been up to
+      </h2>
+    </section>
+  {projectCards.map(item =>(
+  <ProjectCard title={item.title} content={item.content} badges={item.badges} altBg={item.altBg} />
+  ))}
+  <!--<ProjectCard title="Prabhu Mahalaxmi Life Insurance"  altBg={true}/>-->
+  <!--<ProjectCard />-->
+  
+</Layout>

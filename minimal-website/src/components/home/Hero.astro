@@ -1,0 +1,81 @@
+---
+import IconList from "../IconList.astro"
+
+const badges = [
+  { name: "React", image: "react.svg" },
+  { name: "Laravel", image: "laravel.svg" },
+  { name: "Wordpress", image: "wordpress.svg" },
+];
+---
+
+<section
+  class="flex justify-start items-end self-stretch gap-10 px-32 pt-32 bg-[#222] border-t-0 border-r-0 border-b-4 border-l-0 border-[#444]"
+>
+  <div class="flex flex-col justify-center items-start flex-grow gap-10 pb-32">
+    <h1 class="self-stretch text-8xl">
+      <span>Want</span>
+      <span class="text-primary">beautiful</span>
+      <span>websites?</span>
+    </h1>
+    <div class="flex flex-col gap-5">
+      <p class="text-2xl">
+        I am a professional Web developer
+        <span class="text-primary">5+ years</span>
+        of experience in tools like
+      </p>
+      <ul class="flex flex-wrap gap-2 font-primary">
+        {
+          badges.map((item) => (
+            <li class="flex p-3 border-2 border-border gap-2">
+              <img
+                src={`/images/icons/${item.image}`}
+                alt={item.name}
+                class="object-contain"
+                width="20"
+                height="20"
+                loading="eager"
+              />
+              <p class="text-xl font-medium text-left">{item.name}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex gap-2">
+      <button
+        class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
+        style="box-shadow: 0px 6px 0px 0 #aaa;"
+      >
+        <img src="assets/icons/download.svg" width="16" height="16" />
+        <p>Download Resume</p>
+      </button>
+      <button
+        class="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-background border-2 border-[#5f5f5f]"
+        style="box-shadow: 0px 6px 0px 0 #4b4b4b;"
+      >
+        <p class="text-sm font-medium text-left uppercase text-[#d1cfc0]">
+          Let’s Talk
+        </p>
+      </button>
+    </div>
+  </div>
+
+  <!--right-->
+  <div
+    class="max-w-[600px] w-full flex justify-center items-center flex-col gap-5 p-10 py-16 bg-background -mb-1 border-x-4 border-t-4 border-[#444]"
+  >
+    <img src="/assets/icons/me.svg" loading="eager" />
+    <a href="/" class="text-4xl font-semibold text-left font-primary">
+      Abhishek Raj Poudel
+    </a>
+    <p class="text-2xl">Full Stack Developer</p>
+    <IconList/> 
+    <button
+      class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
+      style="box-shadow: 0px 6px 0px 0 #aaa;"
+    >
+      <img src="assets/icons/download.svg" width="16" height="16" />
+      <p>Download Resume</p>
+    </button>
+  </div>
+</section>

@@ -4,6 +4,7 @@
     "build": "npx vite build"
   },
   "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
     "@tailwindcss/cli": "^4.0.12",
     "@tailwindcss/vite": "^4.0.12",
     "alpinejs": "^3.14.8",
