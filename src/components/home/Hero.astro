@@ -1,5 +1,5 @@
 ---
-import IconList from "../IconList.astro"
+import IconList from "../IconList.svelte"
 
 const badges = [
   { name: "React", image: "react.svg" },
@@ -46,7 +46,7 @@ const badges = [
         class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
         style="box-shadow: 0px 6px 0px 0 #aaa;"
       >
-        <img src="assets/icons/download.svg" width="16" height="16" />
+        <img src="/images/icons/download.svg" alt="Download Resume" width="16" height="16" />
         <p>Download Resume</p>
       </button>
       <button
@@ -64,17 +64,17 @@ const badges = [
   <div
     class="max-w-[600px] w-full flex justify-center items-center flex-col gap-5 p-10 py-16 bg-background -mb-1 border-x-4 border-t-4 border-[#444]"
   >
-    <img src="/assets/icons/me.svg" loading="eager" />
+    <img src="/images/icons/me.svg" loading="eager" alt="Abhishek Raj Poudel" />
     <a href="/" class="text-4xl font-semibold text-left font-primary">
       Abhishek Raj Poudel
     </a>
     <p class="text-2xl">Full Stack Developer</p>
-    <IconList/> 
+    <IconList width="36" height="36"/> 
     <button
       class="font-primary flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-6 py-4 bg-[#ddd] border-2 border-[#aaa] text-black uppercase"
       style="box-shadow: 0px 6px 0px 0 #aaa;"
     >
-      <img src="assets/icons/download.svg" width="16" height="16" />
+      <img src="/images/icons/download.svg" alt="Download Resume" width="16" height="16" />
       <p>Download Resume</p>
     </button>
   </div>
